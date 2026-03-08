@@ -1,0 +1,158 @@
+🧠 Ideia geral do programa
+
+👉 É um jogo onde o usuário tenta adivinhar um número aleatório entre 1 e 10.
+
+💻 Código comentado passo a passo
+// Gera um número secreto aleatório entre 1 e 10
+let numeroSecreto = gerarNumeroAleatorio();
+
+// Contador de quantas tentativas o jogador fez
+let tentativas = 1;
+
+
+👉 Aqui ficam os “dados do jogo”.
+
+// Função genérica para mostrar texto em qualquer elemento da página
+function exibirTextoNaTela(tag, texto) {
+    let campo = document.querySelector(tag); // pega o elemento HTML
+    campo.innerHTML = texto; // troca o conteúdo dele
+}
+
+
+🧠 Ideia importante:
+
+"Não repetir código" → cria uma função reutilizável
+
+// Mostra a mensagem inicial do jogo
+function exibirMensagemInicial() {
+    exibirTextoNaTela("h1", "Jogo do número secreto");
+    exibirTextoNaTela("p", "Escolha um número entre 1 e 10");
+}
+exibirMensagemInicial(); // executa quando a página carrega
+
+
+👉 Isso prepara a interface antes do jogador jogar.
+
+🎯 Função principal do jogo
+function verificarChute() {
+
+
+👉 Essa função roda quando o jogador envia um número.
+
+let chute = document.querySelector("input").value;
+
+
+👉 Pega o valor digitado no campo input.
+
+✔️ Caso acerte
+if (chute == numeroSecreto) {
+
+
+👉 Compara o chute com o número secreto.
+
+exibirTextoNaTela("h1", "Acertou!");
+
+
+👉 Atualiza o título.
+
+let palavraTentativas = tentativas > 1 ? "Tentativas" : "Tentativa";
+
+
+🧠 Operador ternário:
+
+Uma forma curta de fazer um if/else
+
+Se for mais de 1 → plural
+Senão → singular
+
+let mensagemTentativas =
+`Você descobriu o número secreto com ${tentativas} ${palavraTentativas}`;
+
+
+👉 Monta a mensagem final usando template string.
+
+exibirTextoNaTela("p", mensagemTentativas);
+
+
+👉 Mostra a mensagem.
+
+document.getElementById("reiniciar").removeAttribute("disabled");
+
+
+👉 Habilita o botão de reiniciar.
+
+❌ Caso erre
+} else {
+
+if (chute > numeroSecreto) {
+    exibirTextoNaTela("p", "O número secreto é menor que " + chute);
+}
+
+
+👉 Dá dica: o número é menor.
+
+else {
+    exibirTextoNaTela("p", "O número secreto é maior que " + chute);
+}
+
+
+👉 Ou maior.
+
+tentativas++
+
+
+👉 Conta mais uma tentativa.
+
+limparCampo()
+
+
+👉 Apaga o input para o próximo chute.
+
+🧹 Função para limpar o campo
+function limparCampo() {
+    chute = document.querySelector("input");
+    chute.value = "";
+}
+
+
+👉 Deixa o campo vazio.
+
+🔄 Reiniciar o jogo
+function reiniciarJogo() {
+
+numeroSecreto = gerarNumeroAleatorio();
+
+
+👉 Cria um novo número secreto.
+
+limparCampo();
+tentativas = 1;
+
+
+👉 Volta tudo ao estado inicial.
+
+exibirMensagemInicial()
+
+
+👉 Mostra as mensagens do começo.
+
+document.getElementById("reiniciar").setAttribute("disabled", true)
+
+
+👉 Desativa o botão novamente.
+
+🎲 Gerar número aleatório
+function gerarNumeroAleatorio() {
+    return parseInt(Math.random() * 10 + 1);
+}
+
+
+🧠 Explicação simples:
+
+Math.random() → número entre 0 e 1
+
+* 10 → entre 0 e 9.999...
+
++ 1 → entre 1 e 10
+
+parseInt() → remove as casas decimais

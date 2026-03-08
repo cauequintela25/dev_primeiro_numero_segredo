@@ -1,0 +1,109 @@
+🧠 PASSO A PASSO — Construa o jogo do zero
+🟢 1) Preparação do jogo
+// Crie uma variável para guardar o número secreto
+// → Esse número deve ser gerado aleatoriamente entre 1 e 10
+
+// Crie uma variável para contar as tentativas do jogador
+// → Comece em 1
+
+🟢 2) Função para mostrar texto na tela
+// Crie uma função que receba:
+// → qual elemento HTML será alterado (tag ou seletor)
+// → qual texto será exibido
+
+// Dentro da função:
+// → encontre o elemento na página
+// → troque o conteúdo dele pelo texto recebido
+
+
+💡 Objetivo: evitar repetir código toda hora.
+
+🟢 3) Mensagem inicial do jogo
+// Crie uma função responsável por preparar a tela inicial
+
+// Ela deve:
+// → mostrar um título do jogo
+// → mostrar instruções para o jogador
+
+// Use a função criada anteriormente para exibir textos
+
+// Depois, execute essa função para que a mensagem apareça ao carregar a página
+
+🟢 4) Função principal — verificar o chute
+// Crie uma função que será chamada quando o jogador tentar um número
+
+// Dentro dela:
+
+// 1) Pegue o valor digitado no campo input
+
+// 2) Compare o valor digitado com o número secreto
+
+🟡 4.1) Se o jogador acertar
+// Mostre uma mensagem de sucesso no título
+
+// Mostre quantas tentativas foram necessárias
+
+// Dica:
+// → Se for apenas 1 tentativa, usar singular
+// → Se for mais de uma, usar plural
+
+// Habilite o botão de reiniciar o jogo
+
+🔴 4.2) Se o jogador errar
+// Verifique se o chute foi maior ou menor que o número secreto
+
+// Mostre uma dica:
+// → "O número secreto é maior"
+// ou
+// → "O número secreto é menor"
+
+// Some +1 ao contador de tentativas
+
+// Limpe o campo de entrada para o próximo chute
+
+🟢 5) Função para limpar o campo
+// Crie uma função que:
+
+// → encontre o campo input
+// → apague o valor digitado
+
+🟢 6) Função para reiniciar o jogo
+// Crie uma função que reinicie tudo:
+
+// → Gere um novo número secreto
+// → Limpe o campo de entrada
+// → Reinicie o contador de tentativas para 1
+// → Mostre novamente a mensagem inicial
+// → Desative o botão de reiniciar
+
+🟢 7) Função para gerar número aleatório
+// Crie uma função que retorne um número inteiro aleatório entre 1 e 10
+
+// Dica:
+// → Use a função de números aleatórios da linguagem
+// → Ajuste o intervalo para começar em 1
+// → Remova as casas decimais
+
+⭐ Ordem ideal para implementar sozinho
+
+Se quiser aprender mais rápido, siga esta sequência:
+
+1️⃣ Gerar número secreto + tentativas
+2️⃣ Função de mostrar texto
+3️⃣ Mensagem inicial
+4️⃣ Verificar chute
+5️⃣ Limpar campo
+6️⃣ Reiniciar jogo
+7️⃣ Função de número aleatório
+
+🚀 Desafio EXTRA (opcional — nível iniciante+)
+
+Depois de fazer:
+
+🔹 Mostrar histórico de tentativas
+
+🔹 Limitar número máximo de tentativas
+
+🔹 Aumentar intervalo (1 a 100)
+
+🔹 Mostrar mensagem ao perder
