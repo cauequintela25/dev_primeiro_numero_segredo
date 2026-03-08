@@ -10,7 +10,7 @@
 // Declarar função
 
 let listaDeNumerosSorteados = [];
-let numeroMaximoDisponivel = 10;
+let numeroMaximoDisponivel = 100;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
